@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Roboto:wght@300;400;700&family=Lobster&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4e9d8;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.time {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.date {
+    font-size: 1em;
+}
+
+/* Estilos diferentes para cada reloj */
+.clock-1 {
+    background: #e2c18b;
+    color: #4b3832;
+    font-family: 'Special Elite', cursive;
+}
+
+.clock-2 {
+    background: #4a4e69;
+    color: #f2e9e4;
+    font-family: 'Roboto', sans-serif;
+}
+
+.clock-3 {
+    background: #f67280;
+    color: #355c7d;
+    font-family: 'Lobster', cursive;
+}
+
+.clock-4 {
+    background: #355c7d;
+    color: #f8b195;
+    font-family: 'Special Elite', cursive;
+}
+
+.clock-5 {
+    background: #6c5b7b;
+    color: #c06c84;
+    font-family: 'Roboto', sans-serif;
+}
+
+.clock-6 {
+    background: #ffcc5c;
+    color: #ff6f69;
+    font-family: 'Lobster', cursive;
+}
+
+.clock-7 {
+    background: #88d8b0;
+    color: #ff6f69;
+    font-family: 'Special Elite', cursive;
+}
+
+.clock-8 {
+    background: #ff6f69;
+    color: #88d8b0;
+    font-family: 'Roboto', sans-serif;
+}
