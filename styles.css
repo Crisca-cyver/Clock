@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Roboto:wght@300;400;700&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap'); /* Añadimos una fuente más vintage */
 
+/* Estilos generales */
 body {
     display: flex;
     justify-content: center;
@@ -16,6 +18,7 @@ body {
     grid-template-rows: repeat(2, 1fr);
     width: 100%;
     height: 100%;
+    gap: 10px; /* Añade un espacio entre los relojes */
 }
 
 .clock {
@@ -28,6 +31,7 @@ body {
     padding: 10px;
     text-align: center;
     font-size: 1.5em;
+    background: #fff;
 }
 
 .time {
@@ -39,13 +43,26 @@ body {
     font-size: 1em;
 }
 
-/* Estilos diferentes para cada reloj */
+/* Estilo vintage para el primer reloj */
 .clock-1 {
-    background: #e2c18b;
-    color: #4b3832;
-    font-family: 'Special Elite', cursive;
+    background: #fdf3e7; /* Color de fondo vintage */
+    color: #5e4b47; /* Color de texto vintage */
+    font-family: 'Courgette', cursive; /* Fuente vintage */
+    border: 2px solid #c2a97a; /* Borde con color vintage */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
 }
 
+.clock-1 .time {
+    font-size: 2.5em; /* Tamaño de fuente más grande */
+}
+
+.clock-1 .date {
+    font-size: 1.2em; /* Tamaño de fuente más grande */
+}
+
+/* Estilos diferentes para cada reloj */
 .clock-2 {
     background: #4a4e69;
     color: #f2e9e4;
@@ -86,4 +103,19 @@ body {
     background: #ff6f69;
     color: #88d8b0;
     font-family: 'Roboto', sans-serif;
+}
+
+/* Estilos responsive */
+@media (max-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+    }
 }

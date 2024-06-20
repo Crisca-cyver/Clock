@@ -12,7 +12,7 @@
         date_default_timezone_set("America/Argentina/Buenos_Aires"); // Ajusta la zona horaria según tu ubicación
         $serverTime = date("H:i:s");
         $serverDate = date("d-m-Y");
-        
+
         for ($i = 1; $i <= 8; $i++) {
             echo "
             <div class='clock clock-$i'>
@@ -27,36 +27,7 @@
     <script>
         const serverTime = "<?php echo $serverTime; ?>";
         const serverDate = "<?php echo $serverDate; ?>";
-
-        function updateClock(clockId) {
-            const timeElement = document.getElementById('time-' + clockId);
-            const dateElement = document.getElementById('date-' + clockId);
-            
-            function update() {
-                const now = new Date();
-                const hours = String(now.getHours()).padStart(2, '0');
-                const minutes = String(now.getMinutes()).padStart(2, '0');
-                const seconds = String(now.getSeconds()).padStart(2, '0');
-                timeElement.textContent = `${hours}:${minutes}:${seconds}`;
-                
-                const day = String(now.getDate()).padStart(2, '0');
-                const month = String(now.getMonth() + 1).padStart(2, '0');
-                const year = now.getFullYear();
-                dateElement.textContent = `${day}-${month}-${year}`;
-            }
-
-            const [serverHours, serverMinutes, serverSeconds] = serverTime.split(':');
-            const initialDate = new Date();
-            initialDate.setHours(serverHours, serverMinutes, serverSeconds);
-            timeElement.textContent = serverTime;
-            dateElement.textContent = serverDate;
-
-            setInterval(update, 1000);
-        }
-
-        for (let i = 1; i <= 8; i++) {
-            updateClock(i);
-        }
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
