@@ -12,7 +12,7 @@
         $timezones = [
             "America/New_York", // Reloj 1
             "Europe/London",    // Reloj 2
-            "Asia/Tokyo",       // Reloj 3
+            "America/Argentina/Cordoba", // Reloj 3 (cambiado)
             "Australia/Sydney", // Reloj 4
             "Europe/Paris",     // Reloj 5
             "America/Sao_Paulo",// Reloj 6

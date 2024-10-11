@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const timezones = [
         "America/New_York", // Reloj 1
         "Europe/London",    // Reloj 2
-        "Asia/Tokyo",       // Reloj 3
+        "America/Argentina/Cordoba", // Reloj 3 (cambiado)
         "Australia/Sydney", // Reloj 4
         "Europe/Paris",     // Reloj 5
         "America/Sao_Paulo",// Reloj 6
@@ -17,22 +17,17 @@ document.addEventListener("DOMContentLoaded", function() {
         const dateElement = document.getElementById('date-' + clockId);
 
         function update() {
-            const now = new Date().toLocaleString("en-US", { timeZone: timezone });
-            const nowDate = new Date(now);
-            const hours = String(nowDate.getHours()).padStart(2, '0');
-            const minutes = String(nowDate.getMinutes()).padStart(2, '0');
-            const seconds = String(nowDate.getSeconds()).padStart(2, '0');
-            timeElement.textContent = `${hours}:${minutes}:${seconds}`;
-            console.log(`Reloj ${clockId} - Hora actualizada: ${hours}:${minutes}:${seconds}`);
+            const now = new Date(); // Obtener la fecha y hora actual
+            const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            const timeString = now.toLocaleTimeString('en-US', options); // Obtener la hora en la zona horaria especificada
+            const dateString = now.toLocaleDateString('en-US', { timeZone: timezone }); // Obtener la fecha en la zona horaria especificada
 
-            const day = String(nowDate.getDate()).padStart(2, '0');
-            const month = String(nowDate.getMonth() + 1).padStart(2, '0'); // Los meses empiezan desde 0
-            const year = nowDate.getFullYear();
-            dateElement.textContent = `${day}-${month}-${year}`;
+            timeElement.textContent = timeString; // Actualizar el contenido del elemento de tiempo
+            dateElement.textContent = dateString; // Actualizar el contenido del elemento de fecha
         }
 
         update(); // Actualizar inmediatamente
-        setInterval(update, 1000);
+        setInterval(update, 1000); // Actualizar cada segundo
     }
 
     for (let i = 1; i <= 8; i++) {
