@@ -64,9 +64,11 @@ body {
 
 /* Estilos diferentes para cada reloj */
 .clock-2 {
-    background: #4a4e69;
-    color: #f2e9e4;
-    font-family: 'Roboto', sans-serif;
+    background: #ffffff; /* Fondo blanco para un look minimalista */
+    color: #333; /* Texto en gris oscuro para mejor contraste */
+    font-family: 'Roboto', sans-serif; /* Mantenemos Roboto por su limpieza */
+    border: 1px solid #ddd; /* Borde sutil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
 }
 
 .clock-3 {

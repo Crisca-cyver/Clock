@@ -9,13 +9,22 @@
 <body>
     <div class="container">
         <?php
-        date_default_timezone_set("America/Argentina/Buenos_Aires"); // Ajusta la zona horaria según tu ubicación
-        $serverTime = date("H:i:s");
-        $serverDate = date("d-m-Y");
+        $timezones = [
+            "America/New_York", // Reloj 1
+            "Europe/London",    // Reloj 2
+            "Asia/Tokyo",       // Reloj 3
+            "Australia/Sydney", // Reloj 4
+            "Europe/Paris",     // Reloj 5
+            "America/Sao_Paulo",// Reloj 6
+            "Africa/Johannesburg", // Reloj 7
+            "Asia/Dubai"        // Reloj 8
+        ];
 
         for ($i = 1; $i <= 8; $i++) {
+            $timezoneName = $timezones[$i - 1];
             echo "
             <div class='clock clock-$i'>
+                <div class='timezone' id='timezone-$i'>$timezoneName</div>
                 <div class='time' id='time-$i'></div>
                 <div class='date' id='date-$i'></div>
             </div>
@@ -24,10 +33,6 @@
         ?>
     </div>
 
-    <script>
-        const serverTime = "<?php echo $serverTime; ?>";
-        const serverDate = "<?php echo $serverDate; ?>";
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
